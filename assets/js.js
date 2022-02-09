@@ -35,7 +35,7 @@ function navFn (){
 searchBtn.addEventListener("click", function(event){
     event.preventDefault()
     localStorage.setItem("recent", searchInput.value);
-
+})
 
 // new code thats for the random fact function and the event listener for it
 function randomFacts(){
