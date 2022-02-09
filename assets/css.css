@@ -14,3 +14,7 @@ body {
   background-size: cover;
   background-position: fixed;
 }
+
+#search {
+margin-left: 100px;
+}
