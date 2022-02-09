@@ -1,7 +1,8 @@
 
 let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}&count=1`;
-
+var searchBtn = document.querySelector("#search")
+let searchInput = document.getElementById("searchinput")
 let imageElement = document.querySelector("#randomImage");
 let imageLink = document.querySelector("imageLink");
 
@@ -29,3 +30,10 @@ function navFn (){
 
     })
 }
+
+
+searchBtn.addEventListener("click", function(event){
+    event.preventDefault()
+    localStorage.setItem("recent", searchInput.value);
+
+})
