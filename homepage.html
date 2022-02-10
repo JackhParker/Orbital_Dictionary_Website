@@ -10,15 +10,40 @@
 </head>
 
 <body>
-    <div class="imageContainer">
+    <!-- header section begins. -->
+    <header>
+        <nav>
+            <ul class="container">
+                <li><img src="./assets/images/full-logo.svg" alt=""></li>
+                <li><a href="#">Planets</a></li>
+                <li><a href="#">Moons</a></li>
+                <li><a href="#">Asteroids</a></li>
+                <li><a href="#">About us</a></li>
+                <form>
+                    <input id="searchInput" type="text">
+                    <input id="search" type="submit" value="submit"> 
+                </form>
+            </ul>
+        </nav>
+    </header>
+    <!-- header section ends. -->
 
-        <form><input id="searchinput" type="text"><input id="search" type="submit" value="submit"> </form>
-        <a id="imageLink" href="#"></a>
-        <img id="randomImage" alt="" />
-    </div>
-    <div id="fact-card">
-        <button id="randomFactsButton"></button>
-    </div>
+    <!-- main content section begins.  -->
+    <main>
+        <!-- hero section begins.  -->
+        <section class="imageContainer hero">
+        </section>
+        <!-- hero section ends.  -->
+
+        <!-- fact card section begins.  -->
+        <section id="factCard">
+            <button id="randomFactsButton"></button>
+        </section>
+        <!-- fact card section ends.  -->
+    </main>
+    <!-- main content section ends.  -->
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js.js"></script>

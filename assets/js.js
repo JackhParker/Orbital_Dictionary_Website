@@ -2,10 +2,10 @@
 let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
 var searchBtn = document.querySelector("#search")
-let searchInput = document.getElementById("searchinput")
-let imageElement = document.querySelector("#randomImage");
-let imageLink = document.querySelector("imageLink");
-const textDOMArea = document.querySelector(`#testing-p`)
+let searchInput = document.getElementById("searchInput")
+let imageContainer = document.querySelector(".imageContainer");
+
+// const textDOMArea = document.querySelector(`#testing-p`);
 
 
 // new global var being adding fo the facts button
@@ -32,7 +32,7 @@ fetch(endpoint)
     })
     .then(function (data) {
         console.log(data);
-        imageElement.src = data.url;
+        imageContainer.style = `background-image:url("${data.url}");`;
         // textDOMArea.textContent = data[0].explanation;
     })
 
@@ -51,8 +51,10 @@ function navFn() {
 searchBtn.addEventListener("click", function (event) {
     event.preventDefault()
     localStorage.setItem("recent", searchInput.value);
-    localStorage.setItem("Search Array", searchArray[function addEntry() {}
-    ]);
+
+    localStorage.setItem("Search Array", searchArray[function addEntry() {
+    }]);
+
 
     // we will need to have within local storage an array of recent searches
     // Arrays must be stringified in local storage
@@ -60,10 +62,11 @@ searchBtn.addEventListener("click", function (event) {
     // If there is no previous history of an array in local storage we should create a new array
 })
 
-// new code thats for the random fact function and the event listener for it by JACK P
-function randomFacts(){
-    var factCard = document.getElementById("fact-card")
-    var factInfo = `https://api.le-systeme-solaire.net/rest/bodies/jupiter`
+
+// new code thats for the random fact function and the event listener for it
+function randomFacts() {
+    var factCard = document.querySelector("#factCard")
+    var factInfo = "https://api.le-systeme-solaire.net/rest/bodies/mars"
 
     fetch(factInfo)
     .then(function(responce){
