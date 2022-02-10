@@ -2,10 +2,10 @@
 let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
 var searchBtn = document.querySelector("#search")
-let searchInput = document.getElementById("searchinput")
-let imageElement = document.querySelector("#randomImage");
-let imageLink = document.querySelector("imageLink");
-const textDOMArea = document.querySelector(`#testing-p`)
+let searchInput = document.getElementById("searchInput")
+let imageContainer = document.querySelector(".imageContainer");
+
+// const textDOMArea = document.querySelector(`#testing-p`);
 
 
 // new global var being adding fo the facts button
@@ -32,7 +32,7 @@ fetch(endpoint)
     })
     .then(function (data) {
         console.log(data);
-        imageElement.src = data.url;
+        imageContainer.style = `background-image:url("${data.url}");`;
         // textDOMArea.textContent = data[0].explanation;
     })
 
@@ -55,7 +55,7 @@ searchBtn.addEventListener("click", function (event) {
 
 // new code thats for the random fact function and the event listener for it
 function randomFacts() {
-    var factCard = document.querySelector("#fact-card")
+    var factCard = document.querySelector("#factCard")
     var factInfo = "https://api.le-systeme-solaire.net/rest/bodies/mars"
 
     fetch(factInfo)
