@@ -1,8 +1,13 @@
 
 let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
+
+
 var searchBtn = document.querySelector("#search")
 let searchInput = document.getElementById("searchInput")
+let searchHistoryUl = document.getElementById(`searchHistory`);
+
+
 let imageContainer = document.querySelector(".imageContainer");
 
 // const textDOMArea = document.querySelector(`#testing-p`);
@@ -55,10 +60,9 @@ searchBtn.addEventListener("click", function (event) {
     event.preventDefault()
     localStorage.setItem("recent", searchInput.value);
     var searchArray = []
-    if(localStorage.getItem("Search Array"))
-    {searchArray =JSON.parse(localStorage.getItem("Search Array"))}
+    if (localStorage.getItem("Search Array")) { searchArray = JSON.parse(localStorage.getItem("Search Array")) }
     searchArray.push(searchInput.value)
-        
+
     localStorage.setItem("Search Array", JSON.stringify(searchArray))
 
 
@@ -74,39 +78,39 @@ function randomFacts() {
     var factCard = document.querySelector("#factCard")
     var namePulled = factList[Math.floor(Math.random() * factList.length)];
     var factInfo = `https://api.le-systeme-solaire.net/rest/bodies/${namePulled}`
-    
+
 
     fetch(factInfo)
-    .then(function(responce){
-        return responce.json();
-        
-    })
-    .then(function(data){
-        var name = document.createElement(`h1`);
-        var facts = document.createElement(`h3`);
-        var facts2 = document.createElement(`p`);
-        var facts3 = document.createElement(`p`);
-        var facts4 = document.createElement(`p`);
+        .then(function (responce) {
+            return responce.json();
 
-        name.textContent = data.englishName;
-        facts.textContent = data.bodyType;
-        facts2.textContent = `Mass in Kg: ` + data.mass.massValue + ` x 10^` + data.mass.massExponent + ` Kg`;
-        facts3.textContent = `Gravity: ` + data.gravity + ` Meters/Sec`;
-        facts4.textContent = `Average Temp: ` + Math.round(data.avgTemp + -273.15) + `C`;
+        })
+        .then(function (data) {
+            var name = document.createElement(`h1`);
+            var facts = document.createElement(`h3`);
+            var facts2 = document.createElement(`p`);
+            var facts3 = document.createElement(`p`);
+            var facts4 = document.createElement(`p`);
 
-        factCard.appendChild(name);
-        factCard.appendChild(facts);
-        factCard.appendChild(facts2);
-        factCard.appendChild(facts3);
-        factCard.appendChild(facts4);
-        console.log(data);
-    })
+            name.textContent = data.englishName;
+            facts.textContent = data.bodyType;
+            facts2.textContent = `Mass in Kg: ` + data.mass.massValue + ` x 10^` + data.mass.massExponent + ` Kg`;
+            facts3.textContent = `Gravity: ` + data.gravity + ` Meters/Sec`;
+            facts4.textContent = `Average Temp: ` + Math.round(data.avgTemp + -273.15) + `C`;
+
+            factCard.appendChild(name);
+            factCard.appendChild(facts);
+            factCard.appendChild(facts2);
+            factCard.appendChild(facts3);
+            factCard.appendChild(facts4);
+            console.log(data);
+        })
     // for (var i=0; i < factsArray.length; i++) {
-//   
-//}
+    //   
+    //}
 }
 // FUNCTION FOR THE
-randomFactsButton.addEventListener(`click`, function(event){
+randomFactsButton.addEventListener(`click`, function (event) {
     event.preventDefault();
     randomFacts();
 })
