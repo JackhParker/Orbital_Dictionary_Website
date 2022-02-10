@@ -52,7 +52,7 @@ searchBtn.addEventListener("click", function (event) {
     event.preventDefault()
     localStorage.setItem("recent", searchInput.value);
     localStorage.setItem("Search Array", searchArray[function addEntry() {
-    ]);
+    }]);
 
     // we will need to have within local storage an array of recent searches
     // Arrays must be stringified in local storage
