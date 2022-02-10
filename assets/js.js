@@ -39,7 +39,7 @@ fetch(endpoint)
 
 function navFn() {
     var bodyInput = document.getElementById("body").value
-    var solarSystem = "https://api.le-systeme-solaire.net/rest/bodies/{id}"
+    var solarSystem = `https://api.le-systeme-solaire.net/rest/bodies/${body}`
 
     fetch(solarSystem)
         .then(function (response) {
@@ -51,6 +51,13 @@ function navFn() {
 searchBtn.addEventListener("click", function (event) {
     event.preventDefault()
     localStorage.setItem("recent", searchInput.value);
+    localStorage.setItem("Search Array", searchArray[function addEntry() {
+    ]);
+
+    // we will need to have within local storage an array of recent searches
+    // Arrays must be stringified in local storage
+    // Array strings must be parsed so we can use the push method on them
+    // If there is no previous history of an array in local storage we should create a new array
 })
 
 // new code thats for the random fact function and the event listener for it
