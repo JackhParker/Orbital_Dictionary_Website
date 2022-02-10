@@ -9,7 +9,7 @@ let imageContainer = document.querySelector(".imageContainer");
 
 
 // new global var being adding fo the facts button
-let randomFactsButton = document.querySelector(`#randomFactsButton`);
+let randomFactsButton = document.getElementById(`randomFactsButton`);
 
 // Original Code for the image of the day 
 
@@ -51,8 +51,10 @@ function navFn() {
 searchBtn.addEventListener("click", function (event) {
     event.preventDefault()
     localStorage.setItem("recent", searchInput.value);
+
     localStorage.setItem("Search Array", searchArray[function addEntry() {
     }]);
+
 
     // we will need to have within local storage an array of recent searches
     // Arrays must be stringified in local storage
@@ -60,25 +62,40 @@ searchBtn.addEventListener("click", function (event) {
     // If there is no previous history of an array in local storage we should create a new array
 })
 
+
 // new code thats for the random fact function and the event listener for it
 function randomFacts() {
     var factCard = document.querySelector("#factCard")
     var factInfo = "https://api.le-systeme-solaire.net/rest/bodies/mars"
 
     fetch(factInfo)
-        .then(function (responce) {
-            return responce.json();
+    .then(function(responce){
+        return responce.json();
+        
+    })
+    .then(function(data){
+        var name = document.createElement(`h1`);
+        var facts2 = document.createElement(`h2`);
+        var facts = document.createElement(`p`);
+        var facts3 = document.createElement(`p`);
 
-        })
-        .then(function (data) {
-            var facts = document.createElement(`p`);
-            facts.textContent = data;
-            console.log(data);
-        })
+        name.textContent = data.englishName;
+        facts2.textContent = data.bodyType;
+        facts.textContent = `Mass in Kg: ` + data.mass.massValue + ` x 10^` + data.mass.massExponent + ` Kg`;
+        facts3.textContent = `Gravity: ` + data.gravity + ` Meters/Sec`;
 
+        factCard.appendChild(name);
+        factCard.appendChild(facts2);
+        factCard.appendChild(facts);
+        factCard.appendChild(facts3);
+        console.log(data);
+    })
+    // for (var i=0; i < factsArray.length; i++) {
+//   
+//}
 }
-
-randomFactsButton.addEventListener(`click`, function (event) {
+// FUNCTION FOR THE
+randomFactsButton.addEventListener(`click`, function(event){
     event.preventDefault();
     randomFacts();
 })
