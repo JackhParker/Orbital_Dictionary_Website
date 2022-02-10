@@ -54,9 +54,12 @@ function navFn() {
 searchBtn.addEventListener("click", function (event) {
     event.preventDefault()
     localStorage.setItem("recent", searchInput.value);
-
-    localStorage.setItem("Search Array", searchArray[function addEntry() {
-    }]);
+    var searchArray = []
+    if(localStorage.getItem("Search Array"))
+    {searchArray =JSON.parse(localStorage.getItem("Search Array"))}
+    searchArray.push(searchInput.value)
+        
+    localStorage.setItem("Search Array", JSON.stringify(searchArray))
 
 
     // we will need to have within local storage an array of recent searches
