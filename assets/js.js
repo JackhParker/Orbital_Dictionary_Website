@@ -5,46 +5,50 @@ var searchBtn = document.querySelector("#search")
 let searchInput = document.getElementById("searchinput")
 let imageElement = document.querySelector("#randomImage");
 let imageLink = document.querySelector("imageLink");
+const textDOMArea = document.querySelector(`#testing-p`)
 
 
 // new global var being adding fo the facts button
 let randomFactsButton = document.getElementById(`randomFactsButton`);
 
-var factsArray = [`mars`, `earth`, `moon`, `jupiter`, `titan`, `io`, `neptune`, `venus`, `saturn`];
+// Original Code for the image of the day 
 
-// original fetch code for image
 // fetch(endpoint)
 //     .then(function (response) {
 //         return response.json();
-// })
-// // .then(function (data) {
-// //     for (let i = 0; i < data.length; i++) {
-// //         imageElement.src = data[i].url;
-// // }
-// // })
+//     })
+//     .then(function (data) {
+//         for (let i = 0; i < data.length; i++) {
+//             imageElement.src = data[i].url;
+//         }
+//     })
+
+// Refactored code for the image of the day
+// We decided that the context of some of the images without being explained did not fit the webpage
 
 fetch(endpoint)
     .then(function (response) {
         return response.json();
-})
-.then(function (data) {
-    // for (let i = 0; i < data.length; i++) {
+    })
+    .then(function (data) {
+        console.log(data);
         imageElement.src = data.url;
-// }
-})
+        // textDOMArea.textContent = data[0].explanation;
+    })
 
-function navFn (){
+
+function navFn() {
     var bodyInput = document.getElementById("body").value
     var solarSystem = "https://api.le-systeme-solaire.net/rest/bodies/{id}"
 
     fetch(solarSystem)
-        .then(function(response){
+        .then(function (response) {
             return response.json()
-    })
+        })
 }
 
-
-searchBtn.addEventListener("click", function(event){
+// Yazid search box
+searchBtn.addEventListener("click", function (event) {
     event.preventDefault()
     localStorage.setItem("recent", searchInput.value);
 })
