@@ -8,6 +8,19 @@ body {
   z-index: -1;
 }
 
+#fact-card{
+  width: 200px;
+  height: 200px;
+  background-color: beige;
+}
+
+#randomFactsButton{
+  width: 25px;
+  height: 25px;
+  /* display: flex;
+  justify-content: center; */
+}
+
 #randomImage {
   height: 100%;
   width: 100%;
