@@ -56,7 +56,7 @@ searchBtn.addEventListener("click", function (event) {
 // new code thats for the random fact function and the event listener for it by JACK P
 function randomFacts(){
     var factCard = document.getElementById("fact-card")
-    var factInfo = `https://api.le-systeme-solaire.net/rest/bodies/moon`
+    var factInfo = `https://api.le-systeme-solaire.net/rest/bodies/jupiter`
 
     fetch(factInfo)
     .then(function(responce){
