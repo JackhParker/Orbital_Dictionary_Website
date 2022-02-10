@@ -11,6 +11,9 @@ let imageContainer = document.querySelector(".imageContainer");
 // new global var being adding fo the facts button
 let randomFactsButton = document.getElementById(`randomFactsButton`);
 
+let factList = [`earth`, `mars`, `jupiter`, `saturn`, `moon`, `io`, `titan`, `neptune`, `venus`, `mercury`, `pluto`, `ceres`, `europa`, `ganymede`];
+
+
 // Original Code for the image of the day 
 
 // fetch(endpoint)
@@ -69,7 +72,9 @@ searchBtn.addEventListener("click", function (event) {
 // new code thats for the random fact function and the event listener for it
 function randomFacts() {
     var factCard = document.querySelector("#factCard")
-    var factInfo = "https://api.le-systeme-solaire.net/rest/bodies/mars"
+    var namePulled = factList[Math.floor(Math.random() * factList.length)];
+    var factInfo = `https://api.le-systeme-solaire.net/rest/bodies/${namePulled}`
+    
 
     fetch(factInfo)
     .then(function(responce){
@@ -78,19 +83,22 @@ function randomFacts() {
     })
     .then(function(data){
         var name = document.createElement(`h1`);
-        var facts2 = document.createElement(`h2`);
-        var facts = document.createElement(`p`);
+        var facts = document.createElement(`h3`);
+        var facts2 = document.createElement(`p`);
         var facts3 = document.createElement(`p`);
+        var facts4 = document.createElement(`p`);
 
         name.textContent = data.englishName;
-        facts2.textContent = data.bodyType;
-        facts.textContent = `Mass in Kg: ` + data.mass.massValue + ` x 10^` + data.mass.massExponent + ` Kg`;
+        facts.textContent = data.bodyType;
+        facts2.textContent = `Mass in Kg: ` + data.mass.massValue + ` x 10^` + data.mass.massExponent + ` Kg`;
         facts3.textContent = `Gravity: ` + data.gravity + ` Meters/Sec`;
+        facts4.textContent = `Average Temp: ` + Math.round(data.avgTemp + -273.15) + `C`;
 
         factCard.appendChild(name);
-        factCard.appendChild(facts2);
         factCard.appendChild(facts);
+        factCard.appendChild(facts2);
         factCard.appendChild(facts3);
+        factCard.appendChild(facts4);
         console.log(data);
     })
     // for (var i=0; i < factsArray.length; i++) {
