@@ -45,48 +45,48 @@ fetch(endpoint)
         // textDOMArea.textContent = data[0].explanation;
     })
 
-    //start of the function for the background image info 
-    
-    
-    function navFn() {
-        var bodyInput = document.getElementById("body").value
-        var solarSystem = `https://api.le-systeme-solaire.net/rest/bodies/${body}`
-        
-        fetch(solarSystem)
+//start of the function for the background image info 
+
+
+function navFn() {
+    var bodyInput = document.getElementById("body").value
+    var solarSystem = `https://api.le-systeme-solaire.net/rest/bodies/${body}`
+
+    fetch(solarSystem)
         .then(function (response) {
             return response.json()
         })
-    }
-    
-    // Yazid search box
+}
+
+// Yazid search box
 searchBtn.addEventListener("click", function (event) {
-        event.preventDefault()
-        localStorage.setItem("recent", searchInput.value);
-        var searchArray = []
-        if (localStorage.getItem("Search Array")) { searchArray = JSON.parse(localStorage.getItem("Search Array")) }
-        searchArray.push(searchInput.value)
-        
-        localStorage.setItem("Search Array", JSON.stringify(searchArray))
-        
-        
-        // we will need to have within local storage an array of recent searches
-        // Arrays must be stringified in local storage
-        // Array strings must be parsed so we can use the push method on them
-        // If there is no previous history of an array in local storage we should create a new array
-    })
-    
-    
-    // new code thats for the random fact function and the event listener for it
+    event.preventDefault()
+    localStorage.setItem("recent", searchInput.value);
+    var searchArray = []
+    if (localStorage.getItem("Search Array")) { searchArray = JSON.parse(localStorage.getItem("Search Array")) }
+    searchArray.push(searchInput.value)
+
+    localStorage.setItem("Search Array", JSON.stringify(searchArray))
+
+
+    // we will need to have within local storage an array of recent searches
+    // Arrays must be stringified in local storage
+    // Array strings must be parsed so we can use the push method on them
+    // If there is no previous history of an array in local storage we should create a new array
+})
+
+
+// new code thats for the random fact function and the event listener for it
 function randomFacts() {
-        var factCard = document.querySelector("#factCard")
-        var namePulled = factList[Math.floor(Math.random() * factList.length)];
-        var factInfo = `https://api.le-systeme-solaire.net/rest/bodies/${namePulled}`
-        
-        
-        fetch(factInfo)
+    var factCard = document.querySelector("#factCard")
+    var namePulled = factList[Math.floor(Math.random() * factList.length)];
+    var factInfo = `https://api.le-systeme-solaire.net/rest/bodies/${namePulled}`
+
+
+    fetch(factInfo)
         .then(function (response) {
             return response.json();
-            
+
         })
         .then(function (data) {
             factCard.innerHTML = ``;
@@ -95,13 +95,13 @@ function randomFacts() {
             var facts2 = document.createElement(`p`);
             var facts3 = document.createElement(`p`);
             var facts4 = document.createElement(`p`);
-            
+
             name.textContent = data.englishName;
             facts.textContent = data.bodyType;
             facts2.textContent = `Mass in Kg: ` + data.mass.massValue + ` x 10^` + data.mass.massExponent + ` Kg`;
             facts3.textContent = `Gravity: ` + data.gravity + ` Meters/Sec`;
             facts4.textContent = `Average Temp: ` + Math.round(data.avgTemp + -273.15) + `C`;
-            
+
             factCard.appendChild(name);
             factCard.appendChild(facts);
             factCard.appendChild(facts2);
@@ -110,40 +110,33 @@ function randomFacts() {
             console.log(data);
         })
 }
-        // for (var i=0; i < factsArray.length; i++) {
-            //   
-            //}
+// for (var i=0; i < factsArray.length; i++) {
+//   
+//}
 function backgroundInfo() {
     var clientID2 = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
     var endpoint2 = `https://api.nasa.gov/planetary/apod?api_key=${clientID2}`;
-        fetch(endpoint2)
-            .then(function(response){
-                response.json();
-                })
+    fetch(endpoint2)
+        .then(function (response) {
+            response.json();
+        })
 
-            .then(function(data){
-                console.log(data);
-                var imageInfo = document.createElement(`p`);
-                imageInfo.textContent = data;
-                imageCardInfo.appendChild(imageInfo);
-                })
+        .then(function (data) {
+            console.log(data);
+            var imageInfo = document.createElement(`p`);
+            imageInfo.textContent = data;
+            imageCardInfo.appendChild(imageInfo);
+        })
 }
 
 
-        // Click function for fact button
+// Click function for fact button
 randomFactsButton.addEventListener(`click`, function (event) {
-<<<<<<< HEAD
     event.preventDefault();
     randomFacts();
 })
-
-=======
-        event.preventDefault();
-        randomFacts();
-    })
-        // Click function for back ground button
+// Click function for back ground button
 backgroundInfoButton.addEventListener(`click`, function (event) {
-        event.preventDefault();
-        backgroundInfo();
-    })
->>>>>>> 5b13b99c47ea0938367f7c22fd07605c7a69f979
+    event.preventDefault();
+    backgroundInfo();
+})
