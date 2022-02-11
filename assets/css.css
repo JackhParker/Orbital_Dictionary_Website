@@ -116,3 +116,9 @@ form > #submitBtn {
   height: 200px;
   background-color: beige;
 }
+
+@media screen and (max-width: 780px) {
+  body {
+    background-color: blue;
+  }
+}
