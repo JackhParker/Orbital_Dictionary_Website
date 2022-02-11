@@ -3,6 +3,10 @@ let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
 let imageContainer = document.querySelector(".imageContainer");
 
+// Defining Variables that are being utilized alongside our Navigation bar
+
+
+
 // Defining variables that are being utilized alongside our search bar
 var searchBtn = document.querySelector("#submitBtn")
 let searchInput = document.getElementById("searchInput")
@@ -136,7 +140,10 @@ randomFactsButton.addEventListener(`click`, function (event) {
     randomFacts();
 })
 // Click function for back ground button
-backgroundInfoButton.addEventListener(`click`, function (event) {
-    event.preventDefault();
-    backgroundInfo();
-})
+
+// backgroundInfoButton.addEventListener(`click`, function (event) {
+//     event.preventDefault();
+//     backgroundInfo();
+// })
+
+// All information below this point From Adam is experimental for the time being.

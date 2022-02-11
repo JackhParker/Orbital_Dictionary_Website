@@ -34,8 +34,20 @@ header > nav > img.small-logo {
   max-height: 50px;
 }
 
+header > nav > section > ul {
+  flex: 0 0 auto;
+}
+
 header > nav > section > ul > li a {
   height: 75px;
+  font-family: monospace;
+  font-size: 12pt;
+  display: block;
+}
+
+header > nav > section > ul > li > a:hover {
+  color: #202121;
+  background-color: #f9fafb;
 }
 
 nav > section.nav-wrapper {
@@ -71,12 +83,6 @@ form > #submitBtn {
 
 /* header and navbar section ends  */
 
-@media screen and (max-width: 780px) {
-  body {
-    background-color: blue;
-  }
-}
-
 /* main content section begins  */
 
 .imageContainer {
@@ -95,6 +101,7 @@ form > #submitBtn {
   top: calc(25vh + 37.5px);
   left: 17.5%;
   background-color: #202121;
+  padding: 25px;
   z-index: 1;
 }
 
@@ -115,4 +122,26 @@ form > #submitBtn {
   width: 200px;
   height: 200px;
   background-color: beige;
+}
+
+@media screen and (max-width: 740px) {
+  header {
+    top: calc(100% - 75px);
+    background-color: #f9fafb;
+  }
+
+  header > nav > section.nav-wrapper {
+    display: none;
+  }
+
+  header > nav > img {
+    cursor: pointer;
+  }
+  footer {
+    padding-bottom: 75px;
+  }
+
+  .imageContainer > #factCardContainer {
+    top: calc(25vh - 37.5px);
+  }
 }

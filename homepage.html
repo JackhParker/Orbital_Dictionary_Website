@@ -19,16 +19,16 @@
             <img src="./assets/images/company-logo-small-white.svg" alt="Small logo of a rocket Ship for the company of orbital Dictionary" class="show-on-medium-and-down hide-on-large-only hide-on-extra-large-only small-logo">
 
             <section class="nav-wrapper hide-on-small-only">
-                <ul class="left-align">
+                <ul class="left-align" data-target="">
                     <li><a href="#">Planets</a></li>
                     <li><a href="#">Moons</a></li>
                     <li><a href="#">Asteroids</a></li>
                     <li><a href="#">About us</a></li>
                 </ul>
                 <form class="right-align">
-                    <input id="searchInput" type="search" class="">
-                    <button type="submit" id="submitBtn">Launch</button> 
-                    <ul id="searchHistory"></ul>
+                    <input id="searchInput" type="search" class="" data-activates='dropdown1'>
+                    <button type="submit" id="submitBtn" class="dropdown-button">Launch</button> 
+                    <ul id="searchHistory" class="dropdown-content"></ul>
                 </form>
             </section>
         </nav>
@@ -48,11 +48,19 @@
             </article>
         </section>
             <!-- hero section ends.  -->
-
     </main>
     <!-- main content section ends.  -->
-
+    <footer id="footer">
+        <ul>
+            <li>Designed and developed by the Alliance of</li>
+            <li><a href="https://github.com/aden-abdirahman">Adam Cleland</a></li>
+            <li><a href="https://github.com/aclelandx"></a></li>
+            <li><a href=""></a></li>
+            <li><a href="https://github.com/YaZiD01A"></a></li>
+        </ul>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js.js"></script>
+    <script src="./assets/navigation.js"></script>
 </body>
 </html>
