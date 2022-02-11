@@ -124,6 +124,7 @@ form > #submitBtn {
   background-color: beige;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 740px) {
   header {
     top: calc(100% - 75px);
@@ -143,5 +144,10 @@ form > #submitBtn {
 
   .imageContainer > #factCardContainer {
     top: calc(25vh - 37.5px);
+=======
+@media screen and (max-width: 780px) {
+  body {
+    background-color: blue;
+>>>>>>> e604179a9fc8e3de0429d67dbc2cf37f4d8af7d7
   }
 }
