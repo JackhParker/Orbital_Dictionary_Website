@@ -1,14 +1,15 @@
-
+// Defining variables that are being utilized alongside our fetch call and background image
 let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
+let imageContainer = document.querySelector(".imageContainer");
 
-
-var searchBtn = document.querySelector("#search")
+// Defining variables that are being utilized alongside our search bar
+var searchBtn = document.querySelector("#submitBtn")
 let searchInput = document.getElementById("searchInput")
 let searchHistoryUl = document.getElementById(`searchHistory`);
 
 
-let imageContainer = document.querySelector(".imageContainer");
+
 
 // const textDOMArea = document.querySelector(`#testing-p`);
 
@@ -86,6 +87,7 @@ function randomFacts() {
 
         })
         .then(function (data) {
+            factCard.innerHTML = ``;
             var name = document.createElement(`h1`);
             var facts = document.createElement(`h3`);
             var facts2 = document.createElement(`p`);
@@ -114,3 +116,4 @@ randomFactsButton.addEventListener(`click`, function (event) {
     event.preventDefault();
     randomFacts();
 })
+
