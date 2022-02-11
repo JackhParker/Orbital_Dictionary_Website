@@ -132,12 +132,6 @@ function backgroundInfo() {
 
         // Click function for fact button
 randomFactsButton.addEventListener(`click`, function (event) {
-<<<<<<< HEAD
-    event.preventDefault();
-    randomFacts();
-})
-
-=======
         event.preventDefault();
         randomFacts();
     })
@@ -146,4 +140,3 @@ backgroundInfoButton.addEventListener(`click`, function (event) {
         event.preventDefault();
         backgroundInfo();
     })
->>>>>>> 5b13b99c47ea0938367f7c22fd07605c7a69f979

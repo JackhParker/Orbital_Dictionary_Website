@@ -109,16 +109,8 @@ form > #submitBtn {
   background-color: beige;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 780px) {
   body {
     background-color: blue;
   }
-=======
-.Button{
-  width: 25px;
-  height: 25px;
-  /* display: flex;
-  justify-content: center; */
->>>>>>> 5b13b99c47ea0938367f7c22fd07605c7a69f979
 }
