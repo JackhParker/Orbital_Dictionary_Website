@@ -18,6 +18,8 @@ header > nav {
   width: calc(100% - 100px);
   margin: 0px 50px;
   box-shadow: none;
+  flex-flow: row;
+  justify-content: space-evenly;
 }
 
 header > nav > img.full-logo {
@@ -68,6 +70,12 @@ form > #submitBtn {
 }
 
 /* header and navbar section ends  */
+
+@media screen and (max-width: 780px) {
+  body {
+    background-color: blue;
+  }
+}
 
 /* main content section begins  */
 
