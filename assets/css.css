@@ -18,6 +18,8 @@ header > nav {
   width: calc(100% - 100px);
   margin: 0px 50px;
   box-shadow: none;
+  flex-flow: row;
+  justify-content: space-evenly;
 }
 
 header > nav > img.full-logo {
@@ -69,6 +71,12 @@ form > #submitBtn {
 
 /* header and navbar section ends  */
 
+@media screen and (max-width: 780px) {
+  body {
+    background-color: blue;
+  }
+}
+
 /* main content section begins  */
 
 .imageContainer {
@@ -108,9 +116,12 @@ form > #submitBtn {
   height: 200px;
   background-color: beige;
 }
+<<<<<<< HEAD
 
 @media screen and (max-width: 780px) {
   body{
     background-color: blue;
   }
 }
+=======
+>>>>>>> e4425f3aebd82b6e065981e43ef23edf22df35a9
