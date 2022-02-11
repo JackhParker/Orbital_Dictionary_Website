@@ -118,7 +118,11 @@ form > #submitBtn {
 }
 
 @media screen and (max-width: 780px) {
+<<<<<<< HEAD
   body{
+=======
+  body {
+>>>>>>> e604179a9fc8e3de0429d67dbc2cf37f4d8af7d7
     background-color: blue;
   }
 }

@@ -140,3 +140,23 @@ backgroundInfoButton.addEventListener(`click`, function (event) {
     event.preventDefault();
     backgroundInfo();
 })
+// function pulls local storage when someone clicks on bar
+// create element
+// populate element from storage
+// append populated element to ul (li to ul)
+// make for loop to populate child 
+// append child
+// clear ul of any content
+function getRecentSearches (){
+    var searchArray2 = JSON.parse(localStorage.getItem("Search Array"))
+    for (let i = 0; i < searchArray2.length; i++){
+        var element = document.createElement(`li`)
+        var text = searchArray2[i]
+        console.log(text)
+        element.textContent = text
+        searchHistoryUl.appendChild(element)
+    }
+
+
+}
+getRecentSearches();
