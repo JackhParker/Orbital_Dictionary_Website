@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   width: 100%;
+  background-color: #2b2b2b;
 }
 
 /* header and navbar section begins  */
@@ -85,6 +86,10 @@ form > #submitBtn {
 
 /* main content section begins  */
 
+main {
+  margin-bottom: 0px;
+}
+
 .imageContainer {
   height: 100vh;
   width: 100%;
@@ -124,30 +129,193 @@ form > #submitBtn {
   background-color: beige;
 }
 
-<<<<<<< HEAD
+/* about us stylization begins  */
+
+main > #about-us {
+  width: 100%;
+  padding: 50px;
+  background-image: url("./images/about-us-background.svg");
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 0px;
+  backdrop-filter: opacity(50%);
+}
+
+main > #about-us h4 {
+  font-size: 22pt;
+  font-family: "open sans";
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f9fafb;
+}
+
+main > #about-us > p {
+  font-family: "Open Sans";
+  font-size: 12pt;
+  line-height: 2;
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+/* about us stylization ends  */
+
+/* footer stylization begins  */
+
+footer {
+  background-color: #2b2b2b;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+footer > p {
+  color: #f9fafb;
+  font-family: "open sans";
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-size: 10pt;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  padding: 25px 0px 10px 0px;
+}
+
+footer > ul {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 25px;
+  padding-bottom: 15px;
+}
+
+footer > ul > li {
+}
+
+footer > ul > li > a {
+  color: #f9fafb;
+  text-decoration: underline;
+  font-family: "open sans";
+  letter-spacing: 0.05em;
+}
+
+/* footer stylization ends. */
+
+/* custom media query size that was not included in materialize  */
+
 @media screen and (max-width: 740px) {
   header {
     top: calc(100% - 75px);
-    background-color: #f9fafb;
+    background-color: rgb(249, 250, 251, 0.6);
+    width: 100%;
+    backdrop-filter: blur(3px);
+    z-index: 10;
+    transition: 1s ease-in-out;
   }
 
-  header > nav > section.nav-wrapper {
-    display: none;
+  header.open > nav {
+    flex-flow: column nowrap;
+    height: 100vh;
+    padding: 15px;
   }
 
   header > nav > img {
     cursor: pointer;
+    border-radius: 50%;
+    transition: 200ms linear;
   }
+
+  @keyframes logoFlipOpen {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    75% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes logoFlipClosed {
+    0% {
+      transform: rotate(180deg);
+    }
+
+    75% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  header > nav > img.nav-open {
+    transition-delay: 1s;
+    animation: logoFlipOpen 1s linear 200ms 1 normal forwards;
+  }
+
+  header > nav > img.nav-closed {
+    animation: logoFlipClosed 1.2s linear 0ms 1 normal forwards;
+  }
+
+  header.open > nav > section.nav-wrapper {
+    margin: 10px 0px;
+    display: flex !important;
+    flex-flow: column;
+    justify-content: space-evenly;
+  }
+
+  header.open > nav > section.nav-wrapper > ul {
+    width: 100%;
+    margin: 0px;
+  }
+
+  header.open > nav ul > li {
+    width: 100%;
+    text-align: center;
+    color: #202121;
+    height: calc(100vh / 6);
+    border-top: #202121 2px solid;
+  }
+
+  header.open > nav > section.nav-wrapper > ul > li > a {
+    color: #202121;
+    width: 100%;
+    height: auto;
+    padding: 25px 0px;
+  }
+
+  header.open {
+    height: 100vh;
+    top: 0px;
+    transition: 1s ease-in-out;
+  }
+
+  header.closed {
+    transition: 1s ease-in-out;
+  }
+
+  header.closed .nav-wrapper {
+    transition: 100ms;
+    transition-delay: 900ms;
+    display: none;
+  }
+
+  header > nav > img:hover {
+    background-image: url(./images/gradient-hover.gif);
+    background-size: 50px 50px;
+    transition: 200ms ease-in;
+  }
+
   footer {
     padding-bottom: 75px;
   }
 
   .imageContainer > #factCardContainer {
     top: calc(25vh - 37.5px);
-=======
-@media screen and (max-width: 780px) {
-  body {
-    background-color: blue;
->>>>>>> e604179a9fc8e3de0429d67dbc2cf37f4d8af7d7
   }
 }

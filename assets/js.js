@@ -3,20 +3,10 @@ let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
 let imageContainer = document.querySelector(".imageContainer");
 
-// Defining Variables that are being utilized alongside our Navigation bar
-
-
-
 // Defining variables that are being utilized alongside our search bar
 var searchBtn = document.querySelector("#submitBtn")
 let searchInput = document.getElementById("searchInput")
 let searchHistoryUl = document.getElementById(`searchHistory`);
-
-
-
-
-// const textDOMArea = document.querySelector(`#testing-p`);
-
 
 // new global var being adding fo the facts button
 let randomFactsButton = document.getElementById(`randomFactsButton`);
@@ -25,19 +15,6 @@ let factList = [`earth`, `mars`, `jupiter`, `saturn`, `moon`, `io`, `titan`, `ne
 
 
 // Original Code for the image of the day 
-
-// fetch(endpoint)
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         for (let i = 0; i < data.length; i++) {
-//             imageElement.src = data[i].url;
-//         }
-//     })
-
-// Refactored code for the image of the day
-// We decided that the context of some of the images without being explained did not fit the webpage
 
 fetch(endpoint)
     .then(function (response) {
@@ -50,7 +27,6 @@ fetch(endpoint)
     })
 
 //start of the function for the background image info 
-
 
 function navFn() {
     var bodyInput = document.getElementById("body").value
@@ -139,16 +115,8 @@ randomFactsButton.addEventListener(`click`, function (event) {
     event.preventDefault();
     randomFacts();
 })
+
 // Click function for back ground button
-<<<<<<< HEAD
-
-// backgroundInfoButton.addEventListener(`click`, function (event) {
-//     event.preventDefault();
-//     backgroundInfo();
-// })
-
-// All information below this point From Adam is experimental for the time being.
-=======
 backgroundInfoButton.addEventListener(`click`, function (event) {
     event.preventDefault();
     backgroundInfo();
@@ -160,17 +128,14 @@ backgroundInfoButton.addEventListener(`click`, function (event) {
 // make for loop to populate child 
 // append child
 // clear ul of any content
-function getRecentSearches (){
+function getRecentSearches() {
     var searchArray2 = JSON.parse(localStorage.getItem("Search Array"))
-    for (let i = 0; i < searchArray2.length; i++){
+    for (let i = 0; i < searchArray2.length; i++) {
         var element = document.createElement(`li`)
         var text = searchArray2[i]
         console.log(text)
         element.textContent = text
         searchHistoryUl.appendChild(element)
     }
-
-
 }
 getRecentSearches();
->>>>>>> e604179a9fc8e3de0429d67dbc2cf37f4d8af7d7
