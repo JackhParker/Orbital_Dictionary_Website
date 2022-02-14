@@ -2,7 +2,7 @@
 let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
 let imageContainer = document.querySelector(".imageContainer");
-
+var imageCardInfo = document.getElementById("imageCardInfo");
 // Defining variables that are being utilized alongside our search bar
 var searchBtn = document.querySelector("#submitBtn")
 let searchInput = document.getElementById("searchInput")
@@ -16,7 +16,6 @@ let searchHistoryUl = document.getElementById(`searchHistory`);
 
 // new global var being adding fo the facts button
 let randomFactsButton = document.getElementById(`randomFactsButton`);
-
 let factList = [`earth`, `mars`, `jupiter`, `saturn`, `moon`, `io`, `titan`, `neptune`, `venus`, `mercury`, `pluto`, `ceres`, `europa`, `ganymede`];
 
 
@@ -118,13 +117,14 @@ function backgroundInfo() {
     var endpoint2 = `https://api.nasa.gov/planetary/apod?api_key=${clientID2}`;
     fetch(endpoint2)
         .then(function (response) {
-            response.json();
+            return response.json();
         })
 
         .then(function (data) {
             console.log(data);
+            imageCardInfo.innerHTML = ``;
             var imageInfo = document.createElement(`p`);
-            imageInfo.textContent = data;
+            imageInfo.textContent = data.explanation;
             imageCardInfo.appendChild(imageInfo);
         })
 }
