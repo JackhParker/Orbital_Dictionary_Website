@@ -47,7 +47,7 @@ searchBtn.addEventListener("click", function (event) {
     searchArray.push(searchInput.value)
 
     localStorage.setItem("Search Array", JSON.stringify(searchArray))
-    document.location.href = './infopage.html';
+    document.location.href = './infoPage.html';
 
 
     // we will need to have within local storage an array of recent searches
