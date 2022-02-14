@@ -4,35 +4,17 @@ let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
 let imageContainer = document.querySelector(".imageContainer");
 var imageCardInfo = document.getElementById("imageCardInfo");
 // Defining variables that are being utilized alongside our search bar
-var searchBtn = document.querySelector("#submitBtn")
-let searchInput = document.getElementById("searchInput")
-let searchHistoryUl = document.getElementById(`searchHistory`);
-
-
-
-
-// const textDOMArea = document.querySelector(`#testing-p`);
-
+const searchBtn = document.querySelector("#submitBtn")
+const searchInput = document.getElementById("searchInput")
+const searchHistoryUl = document.getElementById(`searchHistory`);
 
 // new global var being adding fo the facts button
-let randomFactsButton = document.getElementById(`randomFactsButton`);
+const randomFactsButton = document.getElementById(`randomFactsButton`);
+
 let factList = [`earth`, `mars`, `jupiter`, `saturn`, `moon`, `io`, `titan`, `neptune`, `venus`, `mercury`, `pluto`, `ceres`, `europa`, `ganymede`];
 
 
 // Original Code for the image of the day 
-
-// fetch(endpoint)
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         for (let i = 0; i < data.length; i++) {
-//             imageElement.src = data[i].url;
-//         }
-//     })
-
-// Refactored code for the image of the day
-// We decided that the context of some of the images without being explained did not fit the webpage
 
 fetch(endpoint)
     .then(function (response) {
@@ -45,7 +27,6 @@ fetch(endpoint)
     })
 
 //start of the function for the background image info 
-
 
 function navFn() {
     var bodyInput = document.getElementById("body").value
@@ -66,6 +47,7 @@ searchBtn.addEventListener("click", function (event) {
     searchArray.push(searchInput.value)
 
     localStorage.setItem("Search Array", JSON.stringify(searchArray))
+    document.location.href = './infopage.html';
 
 
     // we will need to have within local storage an array of recent searches
@@ -135,6 +117,7 @@ randomFactsButton.addEventListener(`click`, function (event) {
     event.preventDefault();
     randomFacts();
 })
+
 // Click function for back ground button
 backgroundInfoButton.addEventListener(`click`, function (event) {
     event.preventDefault();
@@ -147,16 +130,14 @@ backgroundInfoButton.addEventListener(`click`, function (event) {
 // make for loop to populate child 
 // append child
 // clear ul of any content
-function getRecentSearches (){
+function getRecentSearches() {
     var searchArray2 = JSON.parse(localStorage.getItem("Search Array"))
-    for (let i = 0; i < searchArray2.length; i++){
+    for (let i = 0; i < searchArray2.length; i++) {
         var element = document.createElement(`li`)
         var text = searchArray2[i]
         console.log(text)
         element.textContent = text
         searchHistoryUl.appendChild(element)
     }
-
-
 }
 getRecentSearches();

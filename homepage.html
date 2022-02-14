@@ -4,32 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orbital Dictionary</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css.css" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
     
     <!-- header section begins. -->
-    <header>
+    <header class="closed">
         <nav class="valign-wrapper">
             <img src="./assets/images/company-logo-full-white.svg" alt="Logo of a rocket with the words Orbital Dictionary next to it" class="hide-on-med-and-down full-logo">
-            <img src="./assets/images/company-logo-small-white.svg" alt="Small logo of a rocket Ship for the company of orbital Dictionary" class="show-on-medium-and-down hide-on-large-only hide-on-extra-large-only small-logo">
+            <img src="./assets/images/company-logo-small-white.svg" alt="Small logo of a rocket Ship for the company of orbital Dictionary" class="show-on-medium-and-down hide-on-large-only hide-on-extra-large-only small-logo nav-closed">
 
             <section class="nav-wrapper hide-on-small-only">
-                <ul class="left-align">
-                    <li><a href="#">Planets</a></li>
+                <ul class="left-align" data-target="" id="nav-links">
+                    <li><a class='dropdown-trigger' href='#' data-target='dropdown-planets'>Planets</a></li>
                     <li><a href="#">Moons</a></li>
                     <li><a href="#">Asteroids</a></li>
-                    <li><a href="#">About us</a></li>
+                    <li><a href="./homepage.html">About us</a></li>
                 </ul>
                 <form class="right-align">
-                    <input id="searchInput" type="search" class="">
+                    <input id="searchInput" type="text" class="dropdown-trigger" data-target="searchHistory">
                     <button type="submit" id="submitBtn">Launch</button> 
-                    <ul id="searchHistory"></ul>
+                    <ul id="searchHistory" class="dropdown-content"></ul>
                 </form>
+                <ul id="dropdown-planets" class="dropdown-content">
+                    <li>Exit</li>
+                    <li>Mercury</li>
+                    <li>Venus</li>
+                    <li>Earth</li>
+                    <li>Mars</li>
+                    <li>Jupiter</li>
+                    <li>Saturn</li>
+                    <li>Uranus</li>
+                    <li>Neptune</li>
+                </ul>
             </section>
         </nav>
     </header>
@@ -43,18 +58,47 @@
             <article id="factCardContainer">
                 <section id="factCard">
                 </section>
-                <button id="randomFactsButton">Land</button>
-                <button id="backgroundInfoButton">water</button>
+                <button id="randomFactsButton">Random Planet Fact</button>
+                <button id="backgroundInfoButton">Background-information</button>
                 <section id="imageCardInfo"></section>
                 <!-- fact card section ends.  -->
             </article>
         </section>
             <!-- hero section ends.  -->
 
+            <!-- about us section begins  -->
+        <section id="about-us">
+            <h4>Orbital Dictionary</h4>
+            <p>
+                As a team, our main focus is being able to bring those together who have a deep interest in outer space. 
+                <br>
+                Our website `Orbital Dictionary' will allow our users to be greeted by a featured picture from space directly from the public NASA Api everyday. 
+                <br>
+                Our site will give our users in depth information about planets, moons, and asteroids that have been identified by the industry leaders.
+                <br>
+                In this day and age; the amount of information that we have access to is vast, sometimes too much so. By providing people with the information they want in one central location we hope to take some of the burden off of the consumer.
+                </p>
+        </section>
+            <!-- about us section ends  -->
     </main>
     <!-- main content section ends.  -->
 
+
+    <!-- footer section begins  -->
+    <footer id="footer">
+        <p>Designed and developed as a joint effort by</p>
+        <ul>
+            <li><a href="https://github.com/aden-abdirahman">Abdirahman Aden</a></li>
+            <li><a href="https://github.com/aclelandx">Adam Cleland</a></li>
+            <li><a href="https://github.com/jackhparker">Jack Parker</a></li>
+            <li><a href="https://github.com/YaZiD01A">Yazid Alhujery</a></li>
+        </ul>
+    </footer>
+    <!-- footer section ends  -->
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js.js"></script>
+    <script src="./assets/navigation.js"></script>
 </body>
 </html>
