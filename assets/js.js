@@ -1,8 +1,8 @@
 // Defining variables that are being utilized alongside our fetch call and background image
 let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
-const imageContainer = document.querySelector(".imageContainer");
-
+let imageContainer = document.querySelector(".imageContainer");
+var imageCardInfo = document.getElementById("imageCardInfo");
 // Defining variables that are being utilized alongside our search bar
 const searchBtn = document.querySelector("#submitBtn")
 const searchInput = document.getElementById("searchInput")
@@ -99,13 +99,14 @@ function backgroundInfo() {
     var endpoint2 = `https://api.nasa.gov/planetary/apod?api_key=${clientID2}`;
     fetch(endpoint2)
         .then(function (response) {
-            response.json();
+            return response.json();
         })
 
         .then(function (data) {
             console.log(data);
+            imageCardInfo.innerHTML = ``;
             var imageInfo = document.createElement(`p`);
-            imageInfo.textContent = data;
+            imageInfo.textContent = data.explanation;
             imageCardInfo.appendChild(imageInfo);
         })
 }
