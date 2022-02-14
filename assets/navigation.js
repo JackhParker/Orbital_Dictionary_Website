@@ -1,6 +1,7 @@
 const smallLogo = document.querySelector(`[src*="small"]`);
 const headerSection = document.querySelector(`header`);
 const navUl = document.querySelector(`#nav-links`)
+const dropdownPlanets = document.getElementById(`dropdown-planets`);
 let width = 0
 
 navWidthListener()
@@ -34,3 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
 let planetsInformation = document.querySelector(`#dropdown-planets`);
 let logPlanetTester = planetsInformation.children[0].textContent
 console.log(logPlanetTester);
+
+dropdownPlanets.addEventListener(`click`, function (e) {
+    let target = e.target;
+    window.localStorage.setItem(`recent`, target.textContent);
+    document.location.href = './infopage.html';
+})

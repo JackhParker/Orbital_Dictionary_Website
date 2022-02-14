@@ -1,15 +1,15 @@
 // Defining variables that are being utilized alongside our fetch call and background image
 let clientID = "OMagC9GezDzZQKGjkT6QHaqQX74W3xukdyNYzqgP";
 let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${clientID}`;
-let imageContainer = document.querySelector(".imageContainer");
+const imageContainer = document.querySelector(".imageContainer");
 
 // Defining variables that are being utilized alongside our search bar
-var searchBtn = document.querySelector("#submitBtn")
-let searchInput = document.getElementById("searchInput")
-let searchHistoryUl = document.getElementById(`searchHistory`);
+const searchBtn = document.querySelector("#submitBtn")
+const searchInput = document.getElementById("searchInput")
+const searchHistoryUl = document.getElementById(`searchHistory`);
 
 // new global var being adding fo the facts button
-let randomFactsButton = document.getElementById(`randomFactsButton`);
+const randomFactsButton = document.getElementById(`randomFactsButton`);
 
 let factList = [`earth`, `mars`, `jupiter`, `saturn`, `moon`, `io`, `titan`, `neptune`, `venus`, `mercury`, `pluto`, `ceres`, `europa`, `ganymede`];
 
@@ -47,6 +47,7 @@ searchBtn.addEventListener("click", function (event) {
     searchArray.push(searchInput.value)
 
     localStorage.setItem("Search Array", JSON.stringify(searchArray))
+    document.location.href = './infopage.html';
 
 
     // we will need to have within local storage an array of recent searches
