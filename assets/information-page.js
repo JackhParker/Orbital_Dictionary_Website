@@ -19,7 +19,6 @@ function getInformation(x) {
             populateResults(data)
             console.log(data);
         });
-
 }
 
 function populateResults(info) {
