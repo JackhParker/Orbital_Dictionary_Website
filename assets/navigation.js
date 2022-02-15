@@ -39,5 +39,5 @@ console.log(logPlanetTester);
 dropdownPlanets.addEventListener(`click`, function (e) {
     let target = e.target;
     window.localStorage.setItem(`recent`, target.textContent);
-    document.location.href = './infopage.html';
+    document.location.href = './infoPage.html';
 })
