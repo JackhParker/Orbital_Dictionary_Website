@@ -61,8 +61,7 @@ searchBtn.addEventListener("click", function (event) {
 function randomFacts() {
     var factCard = document.querySelector("#factCard")
     var namePulled = factList[Math.floor(Math.random() * factList.length)];
-    var factInfo = `cd
-    ${namePulled}`
+    var factInfo = `https://api.le-systeme-solaire.net/rest/bodies/${namePulled}`
 
 
     fetch(factInfo)
