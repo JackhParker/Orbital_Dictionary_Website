@@ -27,4 +27,6 @@ The First group project in creating a functioning website with apis.
         -We used this to pull info for the random fact and the main bulk of the info through the search and nav bars.
 
 # Website pics
-    ./assets/images/
+    -For picture of the site please follow the paths below:
+    ./assets/images/sitePic
+    ./assets/images/sitePic2
